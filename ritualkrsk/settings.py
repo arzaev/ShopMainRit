@@ -126,6 +126,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 #     BASE_DIR / "static"
 # ]
 
-# STATIC_ROOT = config.STATIC_ROOT
+STATIC_ROOT = config.STATIC_ROOT
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
