@@ -18,7 +18,8 @@
 <body>
 <div class="page-container" style="background:{{ BG_COLOR}};">
     <div class="header shadow p-3 mb-5 bg-white rounded">
-			<nav class="navbar container">
+		<div class="row">
+			<nav class="navbar container" style="padding-top: 10px;">
 		
 			  <div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -81,8 +82,9 @@
 
                   
 					 
-                  </div><!-- /.navbar-collapse -->
-			</nav>		
+                  </div>
+			</nav>
+			</div>
 		</div>
 		
 	{% block content %}

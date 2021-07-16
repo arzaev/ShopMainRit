@@ -17,21 +17,36 @@
 		<input type="hidden" id="csrf" value="{{ csrf_token }}">
 	<div class="row ">
 		    <div class="col-md-12 ">
-			    <div class="location shadow p-3 mb-5 bg-white rounded">
+
+			    <div class="">
 
 					<div class="find-widget">
-                 <span style="font-size: 10px">Организация:</span>  <span>{{BUISNESS_COMPANY_NAME}}</span>
+                 <h3 style="color: black;">{{BUISNESS_COMPANY_NAME}}
                 </div>
                 <div class="find-widget">
-                 <span style="font-size: 10px">Адрес:</span> <span>{{BUISNESS_ADDRESS}}</span>
+                 <h3 style="color: black;">{{BUISNESS_ADDRESS}}
                 </div>
                 <div class="find-widget">
-                  <span style="font-size: 10px">Телефон:</span>  <span>{{BUISNESS_PHONE}}</span>
+                  <h3 style="color: black;">{{BUISNESS_PHONE}}</h3>
                 </div>
 					<div class="find-widget">
-                  <span style="font-size: 10px">Email:</span>  <span>{{BUISNESS_EMAIL}}</span>
+                  <h3 style="color: black;">{{BUISNESS_EMAIL}}</h3>
                 </div>
 					</div>
+
+			</div>
+		</div>
+
+	<div class="row">
+		    <div class="col-md-12">
+				<h2>Наше местоположение</h2>
+			</div>
+		</div>
+        <div class="row">
+		    <div class="col-md-12">
+			    <div id="map ">
+					{{MAP_YANDEX_CODE|safe}}
+                </div>
 			</div>
 		</div>
 
@@ -64,18 +79,7 @@
 			</div>
 
 
-		<div class="row">
-		    <div class="col-md-12">
-				<h2>Наше местоположение</h2>
-			</div>
-		</div>
-        <div class="row">
-		    <div class="col-md-12">
-			    <div id="map ">
-					{{MAP_YANDEX_CODE|safe}}
-                </div>
-			</div>
-		</div>
+
 	<br>
 
 
