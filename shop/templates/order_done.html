@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+
+
+
+		<div class="row">
+		    <div class="col-md-12">
+			    <div class="breadcrumbs">
+				    <ul class="breadcrumb shadow p-3 mb-5 bg-white rounded">
+                        <li><a href="/">Главная</a> <span class="divider"></span></li>
+                        <li class="active">Оформление заказа</li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+        <b style="font-size: 30px;">Ваш заказ принят!</b><br><br>
+
+        <div class="row ">
+		    <div class="col-md-12 ">
+			    <div class="your_order ">
+
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+						<div class="table table-bordered table-responsive ">
+                        <h4>Номер заказа: {{code_order}}</h4><br>
+                        <p>В ближайшее время наш менеджер с Вами свяжется для подтверждения заказа. Ожидайте звонка.</p>
+					    </div>
+                      </div>
+
+
+		        </div>
+
+		    </div>
+		</div>
+
+		<div class="row ">
+		    <div class="col-md-12 ">
+			    <div class="your_order ">
+		    		<h3>Ваш заказ</h3>
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+						<table class="table table-bordered table-responsive ">
+					        <thead>
+						        <tr>
+									<th>Продукты</th>
+									<th>Количество</th>
+									<th>Стоимость</th>
+						        </tr>
+					        </thead>
+							<tbody>
+                                {% for pr in cart %}
+									<tr>
+										<td>{{pr.name}}</td>
+										<td>{{pr.count}}</td>
+										<td><span>{{pr.price}} руб.</span></td>
+									</tr>
+                                {% endfor %}
+
+									<tr class="subtotal">
+										<td></td>
+										<td></td>
+										<td><b>Общая стоимость</b> {{general_price}} руб.</td>
+									</tr>
+
+							</tbody>
+					    </table>
+                      </div>
+
+
+
+		        </div>
+
+		    </div>
+		</div>
+
+        <h4>Остались вопросы?</h4>
+        <p>Задайте вопрос, и наши операторы свяжутся с вами в ближайшее время</p>
+        <a href="{% url 'contacts' %}"><button class="btn btn-primary" type="button">Задать вопрос</button></a>
+
+</div>
+
+{% endblock content %}
+{% block js %}
+{{block.super}}
+{% endblock js %}
