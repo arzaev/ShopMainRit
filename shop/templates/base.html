@@ -9,18 +9,18 @@
 	<link rel="icon" type="image/ico" href="{% static 'img/favicon.ico' %}"/>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700' rel='stylesheet' type='text/css'/>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700' rel='stylesheet' type='text/css'/>
-	<link href='{{ STATIC_URL }}css/font-awesome.min.css' rel='stylesheet' type='text/css'/>
+	<link href="{% static 'css/font-awesome.min.css' %}" rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" type="text/css" href="{% static '/css/camera.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
     <!--script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"></script-->	
 	<title>{{ title_shop }}</title>
 </head>
 <body>
-<div class="page-container" style="background:{{ BG_COLOR}};">
-    <div class="header shadow p-3 mb-5 bg-white rounded">
-		<div class="row">
+
+<div class="page-container">
+    <div class="header">
 			<nav class="navbar container" style="padding-top: 10px;">
-		
+
 			  <div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				  <span class="sr-only">Toggle navigation</span>
@@ -32,14 +32,14 @@
 						<img src="" alt="" width="1" height="1"><span>{{title_shop}}</span>
 				</a>
 			  </div>
-  
-                 
+
+
                  <div class="navbar-collapse collapse navbar-right">
 
 					<ul class="nav navbar-nav">
 
                       <li class=""><a href="{% url 'home' %}">Главная</a></li>
-					 
+
                       <li><a href="{% url 'contacts' %}" class="ajax_right">Контакты</a></li>
 					  <li><a href="{{SECOND_SITE_URL}}" class="ajax_right">{{SECOND_SITE_NAME}}</a></li>
 <!--					  <li><a href="" class="ajax_right">Статьи</a></li>-->
@@ -62,7 +62,7 @@
 									<td class="remove"><a onclick="removeCart('{{ pr.id }}');" href="">убрать</a></td>
 								</tr>
 								{% endfor %}
-							</tbody>									
+							</tbody>
 						</table>
 						<div class="cart-total">
 							<input type="hidden" id="csrf" value="{{ csrf_token }}">
@@ -76,22 +76,17 @@
 						  </table>
 						  <div class="checkout"><a href="{% url 'cart' %}" class="ajax_right">Посмотреть корзину</a> | <a href="{% url 'checkout' %}" class="ajax_right">Оформить заказ</a></div>
 						</div>
-					</div> 
+					</div>
 			      </li>
 			     </ul>
-
-                  
-					 
                   </div>
 			</nav>
-			</div>
 		</div>
-		
+
 	{% block content %}
 
-
-
 	{% endblock %}
+
 
 
 	<div class="footer black">
@@ -112,22 +107,17 @@
 				<div class="col-md-3">
 				</div>
 
-				
+
 				<div class="col-md-6 social">
 					<div class="copy">Copyright &copy; arzaev_dev</div>
-					<ul class="social-network">
-						<li><a href=""><i class="fa fa-facebook"></i></a></li>
-						<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-						<li><a href=""><i class="fa fa-pinterest"></i></a></li>
-						<li><a href=""><i class="fa fa-rss"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter"></i></a></li>	
-					</ul>
+
 				</div>
 
-		    </div>	
+		    </div>
 	</div>
-	</div>	
+	</div>
 </div>
+
 {% block js %}
 <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
