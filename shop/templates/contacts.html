@@ -14,38 +14,16 @@
 				</div>
 			</div>
 		</div>
-		<input type="hidden" id="csrf" value="{{ csrf_token }}">
-	<div class="row ">
-		    <div class="col-md-12 ">
 
-			    <div class="">
-
-					<div class="find-widget">
-                 <h3 style="color: black;">{{BUISNESS_COMPANY_NAME}}
-                </div>
-                <div class="find-widget">
-                 <h3 style="color: black;">{{BUISNESS_ADDRESS}}
-                </div>
-                <div class="find-widget">
-                  <h3 style="color: black;">{{BUISNESS_PHONE}}</h3>
-                </div>
-					<div class="find-widget">
-                  <h3 style="color: black;">{{BUISNESS_EMAIL}}</h3>
-                </div>
-					</div>
-
-			</div>
-		</div>
-
-	<div class="row">
+		<div class="row">
 		    <div class="col-md-12">
 				<h2>Наше местоположение</h2>
 			</div>
 		</div>
         <div class="row">
 		    <div class="col-md-12">
-			    <div id="map ">
-					{{MAP_YANDEX_CODE|safe}}
+			    <div id="map">
+                    {{MAP_YANDEX_CODE|safe}}
                 </div>
 			</div>
 		</div>
@@ -54,10 +32,11 @@
 			<div class="col-md-12">
 				<h2>Обратная связь</h2>
 			</div>
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<div class="contact_form shadow p-3 mb-5 bg-white rounded">
 						<form>
 							<fieldset class="form-group">
+								<input type="hidden" id="csrf" value="{{ csrf_token }}">
 								<label>Имя<span class="required">*</span></label>
 								<input type="text" placeholder="" class="form-control" id="nameForm">
 								<label>Email<span class="required">*</span></label>
@@ -75,14 +54,21 @@
 						</p>
 					</div>
 				</div>
+				<div class="col-md-6">
+					<div class="location breadcrumb shadow p-3 mb-5 bg-white rounded">
+						<address>
+						  <strong>{{BUISNESS_COMPANY_NAME}}</strong><br>
+							{{BUISNESS_ADDRESS}}<br>
+						</address>
 
+						<address>
+						  <strong>{{BUISNESS_HOST_NAME}}</strong><br>
+						  <a href="email:#">{{BUISNESS_EMAIL}}</a><br>
+							{{BUISNESS_PHONE}}
+						</address>
+					</div>
+				</div>
 			</div>
-
-
-
-	<br>
-
-
 
 
 	</div>
