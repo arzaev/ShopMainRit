@@ -12,14 +12,39 @@
 	<link href="{% static 'css/font-awesome.min.css' %}" rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" type="text/css" href="{% static '/css/camera.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/new.css' %}">
     <!--script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"></script-->	
 	<title>{{ title_shop }}</title>
 </head>
 <body>
 
 <div class="page-container">
+
+	<header class="b-header">
+        <div class="b-header__metabar">
+            <ul class="b-header__metabar-list">
+                <li class="hidden-xs"><a href="{% url 'home' %}" class="b-header__metabar-flag"></a></li>
+                <li><a href="#" class="">Найти магазин</a></li>
+                <li class="b-header__top-location">
+                                        <a class="hidden-xs b-header__top-location-city" data-toggle="modal" data-target="#b-city-popup">
+                        Красноярск                    </a>
+                                    </li>
+                <li><a href="tel:{{BUISNESS_PHONE}}">{{BUISNESS_PHONE}}</a></li>
+                <li class="hidden"><a href="/news/">Новости</a></li>
+                <li><a href="#">Доставка и оплата</a></li>
+            </ul>
+                        <a class="b-header__metabar-promo pull-right hidden-xs ddl_campaign_link" role="button" data-toggle="collapse" data-campaign-id="free-delivery" href="#" aria-expanded="false" aria-controls="b-page__collapse-top">
+                                Бесплатная доставка<span class=""></span> от 10 000</a>
+            <div class="b-header__metabar-promo b-header__metabar-promo-sale">Скидка 3% пенсионерам</div>
+        </div>
+
+
+    </header>
+
     <div class="header">
 			<nav class="navbar container" style="padding-top: 10px;">
+
+
 
 			  <div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

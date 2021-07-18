@@ -21,6 +21,14 @@ def main_context(context, request):
     context['title_shop'] = config.TITLE_SHOP
     context['SECOND_SITE_NAME'] = config.SECOND_SITE_NAME
     context['SECOND_SITE_URL'] = config.SECOND_SITE_URL
+
+    context['BUISNESS_COMPANY_NAME'] = config.BUISNESS_COMPANY_NAME
+
+    context['BUISNESS_HOST_NAME'] = config.BUISNESS_HOST_NAME
+    context['BUISNESS_EMAIL'] = config.BUISNESS_EMAIL
+    context['BUISNESS_ADDRESS'] = config.BUISNESS_ADDRESS
+    context['MAP_YANDEX_CODE'] = config.MAP_YANDEX_CODE
+    context['BUISNESS_PHONE'] = config.BUISNESS_PHONE
     return context
 
 
@@ -216,13 +224,7 @@ def checkout(request):
 def contacts(request):
     context = {}
     context = main_context(context, request)
-    context['BUISNESS_COMPANY_NAME'] = config.BUISNESS_COMPANY_NAME
 
-    context['BUISNESS_HOST_NAME'] = config.BUISNESS_HOST_NAME
-    context['BUISNESS_EMAIL'] = config.BUISNESS_EMAIL
-    context['BUISNESS_ADDRESS'] = config.BUISNESS_ADDRESS
-    context['MAP_YANDEX_CODE'] = config.MAP_YANDEX_CODE
-    context['BUISNESS_PHONE'] = config.BUISNESS_PHONE
 
     return render(request, 'contacts.html', context=context)
 
